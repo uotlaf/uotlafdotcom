@@ -18,7 +18,7 @@ class Artist extends Model
      * @return bool
      */
     static function new(String $name, String $link) : bool {
-        return DB::table('artists')->insert([$name, $link]);
+        return DB::table('artists')->insert(['name' => $name, 'link' => $link]);
     }
 
     /**
