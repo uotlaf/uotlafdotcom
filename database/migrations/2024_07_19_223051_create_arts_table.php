@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('artists', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+        Schema::create('arts', function (Blueprint $table) {
+            $table->id();
             $table->string("name");
-            $table->string("link");
+            $table->text("description");
+            $table->foreignId("artist")->references("id")->on("artists");
+            $table->string("path_light");
+            $table->string("path_dark")->nullable();
+            $table->boolean("has_dark_mode");
+            $table->boolean("is_banner");
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('artists');
+        Schema::dropIfExists('arts');
     }
 };
