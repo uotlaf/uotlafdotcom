@@ -66,7 +66,7 @@ class Art extends Model
      */
     static public function getRandomBanner(): Art
     {
-        return self::getBanners()[rand(1, Art::getBanners()->count())];
+        return self::getBanners()[rand(0, Art::getBanners()->count()-1)];
     }
 
     /**
