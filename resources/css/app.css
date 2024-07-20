@@ -1,0 +1,73 @@
+
+/* Color pallete */
+:root {
+    --card-title-color: #32B5E5;
+    --card-border-color: #32B5E5;
+    --card-text-color: #F3F3F3;
+    --card-text-stroke-color: #000000;
+    --text-color: #F3F3F3;
+    color: var(--text-color);
+    background-color: black;
+}
+
+/* Body margins*/
+body {
+    margin-left: 11%;
+    margin-right: 11%;
+}
+
+#main_body {
+    display: grid;
+    column-gap: 1%;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'B612';
+    src: url("/fonts/B612-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'B612';
+    src: url("/fonts/B612-Bold.ttf");
+    font-weight: bold;
+}
+
+* {
+    font-family: B612, sans-serif;
+}
+
+/* Cards*/
+
+.card_title {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.card {
+    width: auto;
+    height: auto;
+    color: var(--card-text-color);
+    text-shadow: 1vh 1vh 0 var(--card-text-stroke-color);
+}
+
+.card:hover {
+    background: var(--bgi);
+}
+
+
+
+.card_home {
+    border: solid;
+    border-color: var(--card-border-color);
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+#left > div, #center > div, #right > div {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
