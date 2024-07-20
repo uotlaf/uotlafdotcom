@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Storage;
 /**
  * @method static where(string $string, true $true)
  * @method static order_by(string $string, string $string1)
+ * @method static orderBy(string $string, string $string1)
  */
 class Art extends Model
 {
@@ -66,7 +67,7 @@ class Art extends Model
      */
     static public function getRandomBanner(): Art
     {
-        return self::getBanners()[rand(0, Art::getBanners()->count()-1)];
+        return self::getBanners()[rand(0, Art::getBanners()->count() - 1)];
     }
 
     /**
@@ -88,7 +89,7 @@ class Art extends Model
     static public function getLast(int $count)
     {
         return Cache::rememberForever("Arts.last.$count", function () use ($count) {
-            return Art::order_by("created_at", "desc")->take($count)->get();
+            return Art::orderBy("created_at", "desc")->take($count)->get();
         });
     }
 
