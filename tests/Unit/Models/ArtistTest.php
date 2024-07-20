@@ -3,8 +3,8 @@
 namespace Models;
 
 use App\Models\Artist;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class ArtistTest extends TestCase
 {

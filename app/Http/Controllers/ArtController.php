@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Artist;
+use App\Models\Art;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Cache;
 
-class ArtistController extends Controller
+class ArtController extends Controller
 {
     /**
-     * Get all artists
+     * Get all arts
      * @return Collection
      */
     public function all(): Collection
     {
-        return Cache::rememberForever("Artists", function () {
-            return Artist::all();
+        return Cache::rememberForever("Arts", function () {
+            return Art::all();
         });
     }
+
 }
