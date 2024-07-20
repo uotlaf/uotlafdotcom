@@ -18,5 +18,4 @@ class ArtController extends Controller
             return Art::all();
         });
     }
-
 }

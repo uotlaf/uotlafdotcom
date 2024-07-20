@@ -12,17 +12,6 @@ class ArtistSeeder extends Seeder
      */
     public function run(): void
     {
-        Artist::seed(
-            [
-                [
-                    "name" => "Five_Flare",
-                    "link" => "https://twitter.com/Five_Flare"
-                ],
-                [
-                    "name" => "Bernachá",
-                    "link" => "https://twitter.com/AndreLovesSushi"
-                ]
-            ]
-        );
+        Artist::importFromStorage();
     }
 }

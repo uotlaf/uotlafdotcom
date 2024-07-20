@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
+use Exception;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
+/**
+ * @method static where(string $string, mixed $artist)
+ */
 class Artist extends Model
 {
     use HasFactory;
@@ -27,6 +32,28 @@ class Artist extends Model
     static function cache_keys_invalidate(): void
     {
         Cache::forget("Artists");
+    }
+
+    /**
+     * Imports arts from storage/import/arts/arts.csv
+     * @return void
+     * @throws Exception
+     */
+    static public function importFromStorage(): void
+    {
+        // Get file from directory
+        $file = Storage::disk('local')->get("import/artists/artists.csv");
+
+        // If file dont exists, panic
+        if (empty($file)) {
+            throw new Exception("Art file is empty. Please copy storage/app/import/artists/example.csv to artists.csv");
+        }
+
+        // Get array from csv
+        $arr = CommonFunctions::read_csv($file)->toArray();
+
+        // Add to database
+        self::seed($arr);
     }
 
     /**

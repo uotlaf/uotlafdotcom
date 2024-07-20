@@ -14,6 +14,8 @@ return new class extends Migration {
             $table->id()->autoIncrement();
             $table->string("name");
             $table->string("link");
+            $table->string("icon_url");
+            $table->string("icon_local");
             $table->timestamps();
         });
     }
