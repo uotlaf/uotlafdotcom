@@ -19,6 +19,8 @@ return new class extends Migration {
             $table->string("path_dark")->nullable();
             $table->boolean("has_dark_mode");
             $table->boolean("is_banner");
+            $table->string("path_card_light");
+            $table->string("path_card_dark");
             $table->timestamps();
         });
     }

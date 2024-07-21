@@ -127,12 +127,23 @@ class Art extends Model
 
             $arr[$key]['path_light'] = "/storage/arts/" . $art['path_light'];
 
+            Storage::disk("public")->put("arts/" . $art['path_card_light'],
+                Storage::disk("local")->get("import/arts/" . $art['path_card_light']));
+
+            $arr[$key]['path_card_light'] = "/storage/arts/" . $art['path_card_light'];
+
             // Copy dark mode files if necessary
             if ($art['has_dark_mode']) {
                 Storage::disk("public")->put("arts/" . $art['path_dark'],
                     Storage::disk("local")->get("import/arts/" . $art['path_dark']));
 
                 $arr[$key]['path_dark'] = "/storage/arts/" . $art['path_dark'];
+
+                Storage::disk("public")->put("arts/" . $art['path_card_dark'],
+                    Storage::disk("local")->get("import/arts/" . $art['path_card_dark']));
+
+                $arr[$key]['path_card_dark'] = "/storage/arts/" . $art['path_card_dark'];
+
             }
 
         }
@@ -142,7 +153,7 @@ class Art extends Model
     }
 
     /**
-     * Creates a bunch of new artis based on an [[Art], [Art]] array
+     * Creates a bunch of new arts based on an [[Art], [Art]] array
      * @param array $arts
      * @return bool
      */
