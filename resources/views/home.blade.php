@@ -1,4 +1,4 @@
-@php use App\Models\Art; @endphp
+@php use App\Models\Art;use App\Models\Article; $arc = Article::where('identifier', $article)->first()@endphp
     <!DOCTYPE html>
 <html>
 <head>
@@ -9,27 +9,35 @@
 <body>
 <div id="usable_area">
     <header>
-        {{--                @include('components.banner')--}}
+        @include('components.banner')
     </header>
     <div id="main_body">
         <div id="left">
             <div id="navigation" class="card_home">
-                <p class="card_title">
+                <h2 class="card_title">
                     {{ __('default.navigation') }}
-                </p>
+                </h2>
                 <div class="card_separator"></div>
                 <ul>
-                    <li>{{ __('default.home') }}</li>
-                    <li>{{ __('default.posts') }}</li>
-                    <li>{{ __('default.arts') }}</li>
-                    <li>{{ __('default.about') }}</li>
+                    <li>
+                        @include('components.card', ['text' => __('default.home'), 'link' => '/', 'background' => "/images/default_card_background.png"])
+                    </li>
+                    <li>
+                        @include('components.card', ['text' => __('default.posts'), 'link' => '/', 'background' => "/images/default_card_background.png"])
+                    </li>
+                    <li>
+                        @include('components.card', ['text' => __('default.arts'), 'link' => '/', 'background' => "/images/default_card_background.png"])
+                    </li>
+                    <li>
+                        @include('components.card', ['text' => __('default.about'), 'link' => '/', 'background' => "/images/default_card_background.png"])
+                    </li>
                 </ul>
             </div>
 
             <div id="projects" class="card_home">
-                <p class="card_title">
+                <h2 class="card_title">
                     {{ __('default.projects') }}
-                </p>
+                </h2>
                 <div class="card_separator"></div>
                 <ul>
                     {{--                            Em construção  --}}
@@ -41,52 +49,72 @@
             </div>
 
             <div id="nerd_things" class="card_home">
-                <p class="card_title">
+                <h2 class="card_title">
                     {{ __('default.nerd_things') }}
-                </p>
+                </h2>
                 <div class="card_separator"></div>
                 <ul>
-                    <li>{{ __('default.gpg_key') }}</li>
-                    <li>{{ __('default.rss_feed') }}</li>
+                    <li>
+                        @include('components.card', ['text' => __('default.gpg_key'), 'link' => '/', 'background' => "/images/default_card_background.png"])
+                    </li>
+                    <li>
+                        @include('components.card', ['text' => __('default.rss_feed'), 'link' => '/', 'background' => "/images/default_card_background.png"])
+                    </li>
                 </ul>
             </div>
 
             <div id="other_versions" class="card_home">
-                <p class="card_title">
+                <h2 class="card_title">
                     {{ __('default.other_versions') }}
-                </p>
+                </h2>
                 <div class="card_separator"></div>
                 <ul>
-                    <li>{{ __('versions.3ds') }}</li>
+                    <li>
+                        @include('components.card', ['text' => __('versions.3ds'), 'link' => '/', 'background' => "/images/default_card_background.png"])
+                    </li>
                 </ul>
             </div>
 
             <div id="webring" class="card_home">
-                <p class="card_title">
+                <h2 class="card_title">
                     {{ __('default.webring') }}
-                </p>
+                </h2>
                 <div class="card_separator"></div>
                 <ul>
-                    <li>webring1</li>
+                    <li>
+                        @include('components.card', ['text' => "webring1", 'link' => '/', 'background' => "/images/card_email_background.png"])
+                    </li>
                 </ul>
             </div>
 
 
         </div>
         <div id="center">
-            <p class="card_title">
-                {{ __('dsdsadasdsdsdasa') }}
-            </p>
-            <div class="card_separator"></div>
-            <ul>
-                ainda a fazer
-            </ul>
+            <div class="card_home">
+                <div id="article_title_and_subtitle">
+                <div id="article_title_div">
+                    <div class="card_separator blue_separator"></div>
+                    <a>{{ $arc['title'] }}</a>
+                    <div class="card_separator blue_separator"></div>
+                </div>
+
+                @if (! empty($arc['subtitle']))
+                    <div id="article_subtitle_div">
+                        <a>{{ $arc['subtitle'] }}</a>
+                        <div class="card_separator"></div>
+                    </div>
+                @endif
+                </div>
+                <article>
+                    {!! $arc['content'] !!}
+                </article>
+            </div>
         </div>
         <div id="right">
-            <div id="recent_posts">
-                <p class="card_title">
+            <div id="recent_posts" class="card_home">
+                <h2 class="card_title">
                     {{ __('default.recent_posts') }}
-                </p>
+                </h2>
                 <div class="card_separator"></div>
                 <ul>
                     ainda a fazer
@@ -94,30 +122,28 @@
             </div>
 
             <div id="recent_arts" class="card_home">
-                <p class="card_title">
+                <h2 class="card_title">
                     {{ __('default.recent_arts') }}
-                </p>
+                </h2>
                 <div class="card_separator"></div>
                 <ul>
                     @foreach(Art::getLast(Config::get('site.max_arts_in_recent_card')) as $art)
-                        <li>
-                        @include('components.card', ['text' => $art->name, 'link' => 'sdsadas', 'background' => $art->path_light])
-                        </li>
+                        @include('components.card', ['text' => $art->name, 'link' => '/sdsadas', 'background' => $art->path_card_light])
                     @endforeach
                 </ul>
             </div>
 
             <div id="contacts" class="card_home">
-                <p class="card_title">
+                <h2 class="card_title">
                     {{ __('default.contacts') }}
-                </p>
+                </h2>
                 <div class="card_separator"></div>
                 <ul>
                     <li>
-                        @include('components.card', ['text' => "Email: contact@uotlaf.com", 'link' => 'sdsadas', 'background' => ""])
+                        @include('components.card', ['text' => "Email: contact@uotlaf.com", 'link' => 'sdsadas', 'background' => "/images/card_email_background.png"])
                     </li>
                     <li>
-                        @include('components.card', ['text' => "Twitter: uotlaf", 'link' => 'sdsadas', 'background' => ""])
+                        @include('components.card', ['text' => "Twitter: uotlaf", 'link' => 'sdsadas', 'background' => "/images/card_twitter_background.png"])
                     </li>
                 </ul>
             </div>
@@ -125,6 +151,8 @@
 
         </div>
     </div>
+    <p class="footer_text">{{  __("default.footer_text") }}</p>
+    <p class="footer_text">{{ __("default.phrase") }}</p>
 </div>
 </body>
 </html>

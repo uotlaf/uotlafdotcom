@@ -26,6 +26,7 @@ return [
     'webring' => 'Webring',
     'recent_posts' => 'Posts recentes',
     'recent_arts' => 'Artes recentes',
-
-
+    'contacts' => 'Contatos',
+    'footer_text' => 'Nome do site - Feito em XX-XX-XXXX',
+    'phrase' => 'You don’t stop - You proceed - Cause this is what you need',
 ];

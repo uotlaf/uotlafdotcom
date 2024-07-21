@@ -5,6 +5,7 @@
     --card-border-color: #32B5E5;
     --card-text-color: #F3F3F3;
     --card-text-stroke-color: #000000;
+    --card-separator-color: #3B3C3D;
     --text-color: #F3F3F3;
     color: var(--text-color);
     background-color: black;
@@ -18,8 +19,8 @@ body {
 
 #main_body {
     display: grid;
-    column-gap: 1%;
-    grid-template-columns: 1fr 3fr 1fr;
+    column-gap: 0.2%;
+    grid-template-columns: 1fr 4fr 1fr;
 }
 
 /* Fonts */
@@ -43,22 +44,37 @@ body {
 /* Cards*/
 
 .card_title {
-    font-weight: bold;
+    color: var(--card-title-color);
+    font-weight: normal;
     font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card_separator {
+    color: #3B3C3D;
+    width: auto;
+    border: solid;
+    border-color: var(--card-separator-color);
+    border-width: 3px;
 }
 
 .card {
     width: auto;
     height: auto;
     color: var(--card-text-color);
-    text-shadow: 1vh 1vh 0 var(--card-text-stroke-color);
+    text-shadow: 1px 1px 0 var(--card-text-stroke-color);
+    text-overflow: "...";
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .card:hover {
     background: var(--bgi);
+    background-position: center;
+    background-size: cover;
 }
-
-
 
 .card_home {
     border: solid;
@@ -67,7 +83,73 @@ body {
     border-radius: 10px;
 }
 
+.card_home > ul {
+    display: grid;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card_home > ul > li {
+    padding: 0;
+}
+
+
+ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 4%;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
 #left > div, #center > div, #right > div {
     margin-bottom: 20px;
     margin-top: 20px;
+}
+
+.footer_text {
+    text-align: center;
+}
+
+
+/* Banner */
+#main_banner {
+    aspect-ratio: 6/1;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    text-shadow:
+        1px 1px 0 var(--card-text-stroke-color),
+        -1px 1px 0 var(--card-text-stroke-color),
+        1px -1px 0 var(--card-text-stroke-color),
+        -1px -1px 0 var(--card-text-stroke-color);
+    padding-left: 1%;
+}
+
+/* Article */
+#article_title_div {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#article_title_and_subtitle {
+    display: flex;
+    justify-content: center;
+}
+
+.card_home > article, .card_home > div {
+    margin: 3% 5%;
+    font-size: 22px;
+    text-align: justify;
+}
+
+.blue_separator {
+    border-color: var(--card-border-color);
+    border-width: 1px;
 }
