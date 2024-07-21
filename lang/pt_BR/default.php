@@ -29,4 +29,6 @@ return [
     'contacts' => 'Contatos',
     'footer_text' => 'Nome do site - Feito em XX-XX-XXXX',
     'phrase' => 'You don’t stop - You proceed - Cause this is what you need',
+    'posted_in' => 'Postado dia',
+    'post_author' => ', por'
 ];

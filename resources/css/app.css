@@ -134,7 +134,7 @@ ul li a{
 /* Article */
 #article_title_div {
     display: inline-block;
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
 }
 
@@ -152,4 +152,33 @@ ul li a{
 .blue_separator {
     border-color: var(--card-border-color);
     border-width: 1px;
+}
+
+.post {
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 5/3;
+    width: 49%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: inline-block;
+    align-content: end;
+}
+
+#posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3% 5%;
+}
+
+.post_details {
+    background-color: #212122;
+    opacity: 80%;
+}
+
+.post_title, .post_subtitle, .post_info {
+    margin-bottom: 0;
 }
