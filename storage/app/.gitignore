@@ -3,5 +3,4 @@
 !.gitignore
 !import/
 !import/*
-!import/articles/example.csv
 !import/*/example.csv

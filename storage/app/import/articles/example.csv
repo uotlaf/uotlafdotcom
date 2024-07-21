@@ -1,2 +1,2 @@
-identifier,title,subtitle,author,content,hide_from_posts,created_at
-home,Bem vindo ao meu canto!,,uotlaf,home.html,1,2024-07-01
+identifier,title,subtitle,author,path_banner_light,path_banner_dark,content,hide_from_posts,created_at
+home,Bem vindo ao meu canto!,,uotlaf,,,home.html,1,2024-07-01

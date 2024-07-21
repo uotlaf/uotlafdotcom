@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * @method static where(string $string, $article)
+ */
 class Article extends Model
 {
     use HasFactory;

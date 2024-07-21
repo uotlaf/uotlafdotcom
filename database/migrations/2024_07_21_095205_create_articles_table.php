@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string("title")->unique();
+            $table->string("title");
             $table->string("subtitle")->nullable();
             $table->string("author");
-            $table->string("identifier");
+            $table->string("path_banner_light")->nullable();
+            $table->string("path_banner_dark")->nullable();
+            $table->string("identifier")->unique();
             $table->text("content");
             $table->boolean("hide_from_posts");
             $table->timestamps();
