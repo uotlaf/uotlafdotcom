@@ -36,12 +36,12 @@
                     <div class="card_separator blue_separator"></div>
                 </div>
 
-                @if (! empty($arc['subtitle']))
-                    <div id="article_subtitle_div">
-                        <a>{{ $arc['subtitle'] }}</a>
-                        <div class="card_separator"></div>
-                    </div>
-                @endif
+{{--                @if (! empty($arc['subtitle']))--}}
+{{--                    <div id="article_subtitle_div">--}}
+{{--                        <a>{{ $arc['subtitle'] }}</a>--}}
+{{--                        <div class="card_separator"></div>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
                 </div>
                 @if (!empty($article))
                 <article>

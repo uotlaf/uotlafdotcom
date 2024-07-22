@@ -165,6 +165,11 @@ ul li a{
     color: var(--text-color);
     display: inline-block;
     align-content: end;
+    white-space: nowrap;
+}
+
+.post:hover {
+    white-space: wrap;
 }
 
 #posts {
@@ -173,12 +178,27 @@ ul li a{
     justify-content: space-between;
     margin: 3% 5%;
 }
-
 .post_details {
     background-color: #212122;
     opacity: 80%;
+    padding: 1%;
 }
 
 .post_title, .post_subtitle, .post_info {
     margin-bottom: 0;
+    margin-top: 5px;
+    text-overflow: "...";
+    overflow: hidden;
+}
+
+.post_title {
+    font-size: 20px;
+}
+
+.post_subtitle {
+    font-size: 16px;
+}
+
+.post_info {
+    font-size: 10px;
 }
