@@ -1,0 +1,24 @@
+{
+    "identifier" : "ears01",
+    "name" : "Um problema bem grande",
+    "description": "Uotlaf tem um problema bem grande com sons altos. Acontece que recentemente ele teve que participar de um evento muito barulhento que deixou ele extremamente irritado e com muita dor de cabeça(o que nunca tinha acontecido a este nível). Logo depois alguém resolveu levar uma caixa de som pro restaurante universitário extremamente lotado, o que terminou fazendo uotlaf passar mal e, logo depois, desaprender a falar.",
+    "artist" : [
+        "fiveflare"
+    ],
+    "path_light" : "ears01",
+    "path_dark" : null,
+    "is_banner" : false,
+    "path_card_light" : "card",
+    "path_card_dark" : null,
+    "created_at" : "2024/08/29",
+    "suggestive" : true,
+    "personas" : [
+        "uotlaf"
+    ],
+    "tags" : [
+        "noise",
+        "feeling_sick"
+    ],
+    "links" : {
+    }
+}

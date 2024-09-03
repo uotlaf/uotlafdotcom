@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+
+@layer base {
+    @font-face {
+        font-family: 'B612';
+        src: url("/resources/fonts/B612-Regular.ttf");
+        font-weight: normal;
+    }
+
+    @font-face {
+        font-family: 'B612';
+        src: url("/resources/fonts/B612-Bold.ttf");
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: 'B612';
+        src: url("/resources/fonts/B612-Italic.ttf");
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'B612';
+        src: url("/resources/fonts/B612-BoldItalic.ttf");
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Fira Code';
+        src: url("/resources/fonts/FiraCode-VF.ttf");
+    }
+
+    .transform-preserve-3d {
+        transform-style: preserve-3d;
+    }
+
+    article > p {
+        @apply text-slate-200 text-justify
+    }
+
+    article > h1 {
+        @apply text-4xl font-bold mb-2
+    }
+
+    article > h2 {
+        @apply text-3xl font-bold mb-2
+    }
+
+    h3 {
+        @apply text-2xl font-bold mb-2
+    }
+
+    article > h4 {
+        @apply text-xl font-bold mb-2
+    }
+
+    #in_this_article > ul {
+        @apply mx-2.5
+    }
+
+    #in_this_article > ul > .article_page_h2 {
+        @apply mx-2.5
+    }
+
+
+    p {
+        @apply my-2
+    }
+
+    article > a, article > p > a, #persona_description > p > a, .link{
+        @apply text-blue-400 hover:underline font-bold
+    }
+
+
+    code > span > span, code > span, .code_numbers > li {
+        @apply text-xs
+    }
+
+    code {
+        counter-reset: step;
+        counter-increment: step 0;
+    }
+
+    code > span::before {
+        content: counter(step);
+        counter-increment: step;
+        width: 1rem;
+        margin-right: 1.5rem;
+        display: inline-block;
+        text-align: right;
+        color: gray;
+    }
+
+    code > span {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #pagination > nav {
+        @apply justify-center;
+    }
+
+    #article_reference > li > a:hover {
+        @apply pl-4
+    }
+}

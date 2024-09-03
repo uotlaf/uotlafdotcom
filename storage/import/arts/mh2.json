@@ -1,0 +1,32 @@
+{
+    "identifier" : "mh2",
+    "name" : "uotlaf Palico 2",
+    "description": "Parece que alguém andou jogando monster hunter recentemente, né?",
+    "artist" : [
+        "fiveflare"
+    ],
+    "path_light" : "mh2_light",
+    "path_dark" : "mh2_dark",
+    "is_banner" : false,
+    "path_card_light" : "mh2_card_light",
+    "path_card_dark" : "mh2_card_dark",
+    "created_at" : "2023/12/20",
+    "suggestive" : false,
+    "personas" : [
+        "uotlaf"
+    ],
+    "tags" : [
+        "monster_hunter",
+        "standing"
+    ],
+    "links" : {
+        "winter" : {
+            "link": "https://twitter.com/uotlafen/status/1737522917137621345/photo/2",
+            "icon": "twitter"
+        },
+        "summer" : {
+            "link": "https://twitter.com/uotlafen/status/1798151601409949853/photo/2",
+            "icon": "twitter"
+        }
+    }
+}

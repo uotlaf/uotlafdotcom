@@ -1,0 +1,13 @@
+{
+    "name": "uotlaf",
+    "identifier": "uotlaf",
+    "species": "arctic_fox",
+    "age": 22,
+    "height": "1.72 m",
+    "weight": "72 Kg",
+    "gender": "artist_dependent",
+    "path_banner_art": null,
+    "path_profile_picture": "uotlaf",
+    "show_in_banner": true,
+    "furry": true
+}

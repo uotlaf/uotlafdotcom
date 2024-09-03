@@ -1,0 +1,27 @@
+{
+    "identifier" : "hello01",
+    "name" : "Olá!",
+    "description": "",
+    "artist" : [
+        "bernacha"
+    ],
+    "path_light" : "07-hello1",
+    "path_dark" : "08-hello2",
+    "is_banner" : false,
+    "path_card_light" : "card_light",
+    "path_card_dark" : "card_dark",
+    "created_at" : "2024/07/11",
+    "suggestive" : false,
+    "personas" : [
+        "uotlaf"
+    ],
+    "tags" : [
+        "standing"
+    ],
+    "links": {
+        "twitter" : {
+            "link": "https://twitter.com/AndreLovesSushi/status/1815109904887152807",
+            "icon": "twitter"
+        }
+    }
+}
