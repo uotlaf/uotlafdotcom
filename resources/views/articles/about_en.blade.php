@@ -1,7 +1,8 @@
 {{---
 language:en
-identifier:about_en
+identifier:about
 title:Welcome to my home!
+subtitle:About me
 author:uotlaf
 hide_from_posts:True
 created_at:2024-07-01
@@ -10,7 +11,15 @@ updated_at:none
 @php use App\Models\Persona; @endphp
 @extends('template')
 @section('title', __('default.about'))
-@section('content')
+@section('hide_timestamp', true)
+@section('article_background')
+    @include('components/image',
+        ['class' => "h-full w-full object-cover grayscale",
+        'source' => \App\Models\Theme::get('card_about'),
+        'alt' => 'About',
+        'width_disc' => 1])
+@endsection
+@section('article')
     <div class="flex justify-center">
         @include('components.image', [
             'class' => "rounded-full w-64 border-white border-solid border-2",
@@ -43,33 +52,33 @@ updated_at:none
         layout comes from the sites that people make on neocities (there are some on the webring that are on the left)
     </p>
     <p>
-        Oh, this site was also inspired by some people I usually follow, like <a
+        Oh, this site was also inspired by some people I usually follow, like <a class="link"
             href="https://xeiaso.net">xeiaso.net</a>,
-        <a href="https://kernel32.xyz">kernel32.xyz</a> and <a
+        <a class="link" href="https://kernel32.xyz">kernel32.xyz</a> and <a class="link"
             href="https://worthdoingbadly.com">worthdoingbadly.com</a>
     </p>
 
     <h2 class="text-center">Important information about using this website</h2>
     <p>
         This site is licensed under the BSD 3-Clause NON-AI License. A copy of the license can be found
-        <a href="/LICENSE.txt">here</a>. If you would like an exception to this license, please contact me using the
+        <a class="link" href="/LICENSE.txt">here</a>. If you would like an exception to this license, please contact me using the
         links available on the right side of this page.
     </p>
 
     <p>
-        Want to add me to the webring? The badge is available <a href={{env('CDN_PATH')."/asset/badge/emerald/emerald.gif"}}>here</a>. You can add a
+        Want to add me to the webring? The badge is available <a class="link" href={{env('CDN_PATH')."/asset/badge/emerald/emerald.gif"}}>here</a>. You can add a
         tag like this:
-    <div class="flex justify-center">
-        <img src={{env('CDN_PATH')."/asset/badge/emerald/emerald.gif"}} alt="uotlaf's badge">
-    </div>
     </p>
+    <div class="flex justify-center">
+        <img src={{env('CDN_PATH')."/asset/badge/emerald/emerald.avif"}} alt="uotlaf's badge">
+    </div>
 
     @include("components.code_block", ['language' => 'html', 'code' =>
-     "<img src='".env('CDN_PATH')."/asset/badge/emerald/emerald.gif"."' alt=\"uotlaf's badge\">"
+     "<img src='".env('CDN_PATH')."/asset/badge/emerald/emerald.selected_file_format"."' alt=\"uotlaf's badge\">"
     ])
 
     <p>
-        The code for this site is available <a href="https://github.com/uotlaf/uotlafdotcom">in this repository</a>
+        The code for this site is available <a class="link" href="https://github.com/uotlaf/uotlafdotcom">in this repository</a>
     </p>
 
 @stop

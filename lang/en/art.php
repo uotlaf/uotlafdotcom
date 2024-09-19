@@ -42,8 +42,6 @@ return [
         'title' => 'A very noisy problem',
         'description' => "<p class='indent-8'>Uotlaf has a big problem with loud sounds.</p>
                 <p class='indent-8'>It turns out that he recently had to participate in a very noisy event that left him extremely irritated and with a severe headache (which had never happened to this extent). Soon after, someone decided to take a speaker to the extremely crowded university restaurant, which ended up making uotlaf feel sick and, soon after, \"\"\"forgetting how to speak\"\"\".</p>
-                <p class='indent-8'>Although this problem with sound is nothing new, the voice problem is. There is no way to hide it this time, everyone saw it. You are no longer in high school, now you can no longer isolate yourself and think that no one in your family or work will notice.</p>
-                <p class='indent-8'>It's time to face the ghosts you thought you had defeated. You can't pretend to be happy all the time.</p>
                 <p class='indent-8'>This problem actually happened to me, and now I'm trying to figure out what it is. I needed to explain things in the consultations, so I asked fiveflare to help me and make this art (which turned out amazing). Now I just need to figure out what's going on.</p>
             "
     ],

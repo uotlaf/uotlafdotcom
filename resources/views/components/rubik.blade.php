@@ -3,7 +3,7 @@
         aspect-square
         animate-[rubik-spin3d_10s_infinite_linear]
         transform-preserve-3d
-        [--cube-size:60vw]
+        [--cube-size:15vw]
         lg:[--cube-size:8vw]
         [--border-radius-high:30vw]
         [--border-radius-low:10vw]

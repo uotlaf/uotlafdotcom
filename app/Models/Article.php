@@ -36,11 +36,13 @@ class Article extends Model
         return $this->banner_light;
     }
 
-    public function getBannerLightAttribute() {
+    public function getBannerLightAttribute(): string
+    {
         return env('CDN_PATH')."/asset/article/$this->assets_folder/$this->path_banner_light";
     }
 
-    public function getBannerDarkAttribute() {
+    public function getBannerDarkAttribute(): ?string
+    {
         if ($this->path_banner_dark) {
             return env('CDN_PATH')."/asset/article/$this->assets_folder/$this->path_banner_dark";
         }
@@ -50,6 +52,11 @@ class Article extends Model
     public function tags(): belongsToMany
     {
         return $this->belongsToMany(ArticleTag::class);
+    }
+
+    public function tagNames(): array
+    {
+        return $this->tags()->pluck("name")->toArray();
     }
 
 

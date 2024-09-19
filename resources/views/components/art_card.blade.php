@@ -1,9 +1,9 @@
 @php use App\Models\Art;@endphp
-<a href="/arts_{{App::currentLocale()}}/{{ $art->identifier }}"
-   class="group relative rounded-lg overflow-hidden aspect-[4/3] items-end flex">
+<a href="{{route('art', ['language' => App::currentLocale(), 'identifier' => $art->identifier])}}"
+   class="group relative rounded-lg overflow-hidden aspect-[4/3] items-end flex bg-black border-2 border-blue-900 ">
     @if ($art->suggestive)
         @include('components/image',
-            ['class' => "absolute top-0 left-0 w-full h-full object-contain blur-2xl bg-black",
+            ['class' => "absolute top-0 left-0 w-full h-full object-contain bg-black",
             'source' => $art->photo,
             'alt' => $art->name,
             'width_disc' => 1.2])

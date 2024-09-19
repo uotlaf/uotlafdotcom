@@ -11,13 +11,14 @@
     "path_card_light" : "card",
     "path_card_dark" : null,
     "created_at" : "2024/06/16",
-    "suggestive" : false,
     "personas" : [
         "uotlaf"
     ],
     "tags" : [
         "floating",
-        "geometric_forms"
+        "geometric_forms",
+        "memphis_aesthetic",
+        "bold_colors"
     ],
     "links" : {
     }

@@ -5,6 +5,9 @@
     if (!isset($id)) {
         $id = '';
     }
+    if (!isset($class)) {
+        $class = '';
+    }
 @endphp
 <picture>
     @foreach (['avif', 'webp', 'png', 'jpg'] as $format)
@@ -14,5 +17,5 @@
         @endforeach
         " type="image/{{$format}}">
     @endforeach
-    <img id="{{$id}}" draggable="false" class="{{ $class }}" src="{{ $source }}.avif" sizes="100vw" alt="{{$alt}}">
+    <img id="{{$id}}" draggable="false" class="{{ $class }}" src="{{ $source }}.png" sizes="100vw" alt="{{$alt}}">
 </picture>

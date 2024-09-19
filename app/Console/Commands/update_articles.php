@@ -17,7 +17,7 @@ class update_articles extends Command
      *
      * @var string
      */
-    protected $signature = 'app:update_articles';
+    protected $signature = 'site:update_articles';
 
     /**
      * The console command description.
@@ -60,7 +60,10 @@ class update_articles extends Command
 
                 // Add no banco
                 $model = Article::updateOrCreate(
-                    ['identifier' => $data['identifier']],
+                    [
+                        'identifier' => $data['identifier'],
+                        'language' => $data['language']
+                    ],
                     $data
                 );
 

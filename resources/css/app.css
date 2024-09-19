@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fonts */
-
 @layer base {
+    /* Fonts */
     @font-face {
         font-family: 'B612';
         src: url("/resources/fonts/B612-Regular.ttf");
@@ -36,20 +35,18 @@
         src: url("/resources/fonts/FiraCode-VF.ttf");
     }
 
+
+    /* For 3d usage */
     .transform-preserve-3d {
         transform-style: preserve-3d;
     }
 
-    article > p {
-        @apply text-slate-200 text-justify
-    }
-
-    article > h1 {
-        @apply text-4xl font-bold mb-2
-    }
+    /*article > h1 {*/
+    /*    @apply text-4xl font-bold mb-2*/
+    /*}*/
 
     article > h2 {
-        @apply text-3xl font-bold mb-2
+        @apply text-3xl font-bold mb-2 text-center
     }
 
     h3 {
@@ -73,10 +70,17 @@
         @apply my-2
     }
 
-    article > a, article > p > a, #persona_description > p > a, .link{
+    .link {
         @apply text-blue-400 hover:underline font-bold
     }
 
+    .desktop-only {
+        @apply hidden lg:block
+    }
+
+    .mobile_only {
+        @apply block lg:hidden
+    }
 
     code > span > span, code > span, .code_numbers > li {
         @apply text-xs
@@ -108,5 +112,13 @@
 
     #article_reference > li > a:hover {
         @apply pl-4
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td, th {
+        @apply border-blue-400 border rounded-xl text-left px-2 py-2;
     }
 }

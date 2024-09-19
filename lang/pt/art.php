@@ -34,8 +34,6 @@ return [
         'title' => 'Um problema bem barulhento',
         'description' => "<p class='indent-8'>Uotlaf tem um problema bem grande com sons altos.</p>
                 <p class='indent-8'>Acontece que recentemente ele teve que participar de um evento muito barulhento que deixou ele extremamente irritado e com muita dor de cabeça(o que nunca tinha acontecido a este nível). Logo depois alguém resolveu levar uma caixa de som pro restaurante universitário extremamente lotado, o que terminou fazendo uotlaf passar mal e, logo depois, \"\"\"desaprender a falar\"\"\".</p>
-                <p class='indent-8'>Apesar desse problema com som não ser novidade, o problema de voz é. Não tem como esconder dessa vez, todo mundo viu. Você não tá mais no ensino médio, agora não dá mais pra se isolar e achar que ninguém da família ou trabalho vai notar.</p>
-                <p class='indent-8'>Tá na hora de enfrentar os fantasmas que tu achou que tinha derrotado. Não dá pra fingir que tá feliz o tempo todo. </p>
                 <p class='indent-8'>Esse problema realmente aconteceu comigo, e agora eu tô tratando pra descobrir o que é. Eu precisava explicar as coisas nas consultas, então pedi pro fiveflare me ajudar e fazer essa arte(que ficou incrível). Agora é só descobrir o que tá acontecendo.</p>
             "
     ],

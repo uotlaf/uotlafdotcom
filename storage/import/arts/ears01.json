@@ -8,16 +8,17 @@
     "path_light" : "ears01",
     "path_dark" : null,
     "is_banner" : false,
-    "path_card_light" : "card",
+    "path_card_light" : "card01",
     "path_card_dark" : null,
     "created_at" : "2024/08/29",
-    "suggestive" : true,
+    "suggestive" : false,
     "personas" : [
         "uotlaf"
     ],
     "tags" : [
         "noise",
-        "feeling_sick"
+        "feeling_sick",
+        "simple_background"
     ],
     "links" : {
     }

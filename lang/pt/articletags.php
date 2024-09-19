@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'example' => 'Exemplos'
+    'example' => 'Exemplos',
+    'tablet' => 'Tablet'
 ];

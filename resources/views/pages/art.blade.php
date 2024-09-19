@@ -1,6 +1,7 @@
 @php use App\Helpers\SummerHelper;use App\Models\Theme; @endphp
 @extends('template')
 @section('title', __("art.$art->identifier.title"))
+@section('is_art', true)
 @section('article_background')
     @include('components/image',
         ['class' => "h-full w-full object-cover grayscale",
@@ -33,13 +34,13 @@
     <p class="indent-8">
         {!! __("art.$art->identifier.description") !!}
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 text-left">
         <div>
             <p>
                 {{ __('art.artist') }}:
                 @foreach($art->artists as $artist)
                     <a class="text-blue-600 dark:text-blue-500 hover:underline"
-                       href={{"/artist_".App::currentLocale()."/".$artist->identifier}}>
+                       href={{route('artist', ['language' => App::currentLocale(), 'identifier' => $artist->identifier])}}>
                         {{ $artist->name }}
                     </a>
                 @endforeach
@@ -51,7 +52,7 @@
                 {{ __('art.personas') }}:
                 @foreach($art->personas as $persona)
                     <a class="text-blue-600 dark:text-blue-500 hover:underline"
-                       href={{"/personas_".App::currentLocale()."/".$persona->identifier}}>
+                       href={{route('persona', ['language' => App::currentLocale(), 'identifier' => $persona->identifier])}}>
                         {{ $persona->name }}
                     </a>
                 @endforeach
@@ -92,8 +93,7 @@
             <ul class="list-disc">
                 @foreach($art->tags as $tag)
                     <li class="ml-4">
-                        <a href={{"/arts_".App::currentLocale()."/tag/$tag->name"}} class="text-blue-600
-                           dark:text-blue-500 hover:underline">
+                        <a href="{{route('arts_by_tag', ['language' => App::currentLocale(), 'identifier' => $tag->name])}}" class="text-blue-600 dark:text-blue-500 hover:underline">
                         {{ __("arttags.$tag->name") }}
                         </a>
                     </li>

@@ -1,7 +1,8 @@
 {{---
-language:br
-identifier:about_br
+language:pt
+identifier:about
 title:Bem vindo ao meu canto!
+subtitle:Sobre mim
 author:uotlaf
 hide_from_posts:True
 created_at:2024-07-01
@@ -10,7 +11,15 @@ updated_at:none
 @php use App\Models\Persona; @endphp
 @extends('template')
 @section('title', __('default.about'))
-@section('content')
+@section('hide_timestamp', true)
+@section('article_background')
+    @include('components/image',
+        ['class' => "h-full w-full object-cover grayscale",
+        'source' => \App\Models\Theme::get('card_about'),
+        'alt' => 'About',
+        'width_disc' => 1])
+@endsection
+@section('article')
     <div class="flex justify-center">
         @include('components.image', [
             'class' => "rounded-full w-64 border-white border-solid border-2",

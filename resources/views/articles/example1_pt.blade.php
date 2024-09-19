@@ -8,15 +8,14 @@ path_banner_light:banner_light
 path_banner_dark:banner_dark
 assets_folder:example
 created_at:2024-07-01
-hide_from_posts:True
+hide_from_posts:0
 updated_at:none
 tags:example
 ---}}
 @extends('template')
-@section('title', "Teste de capacidade")
+@section('title', "Teste do site")
 @section('subtitle', "Esse é um artigo exemplo")
-@section('article_mode', true)
-@section('content')
+@section('article')
     <div class="flex justify-center overflow-hidden">
         @include('components.image', [
             'class' => "rounded-xl h-60",

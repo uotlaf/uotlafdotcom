@@ -28,5 +28,6 @@ class update_all extends Command
         $this->call('site:update_artists');
         $this->call('site:update_personas');
         $this->call('site:update_arts');
+        $this->call('site:update_articles');
     }
 }

@@ -11,6 +11,9 @@ export default {
                 'sans': "B612, ui-serif",
                 'mono' : "Fira Code, mono"
             },
+            gridTemplateColumns: {
+                'footer_badges': 'repeat(auto-fill, minmax(230px, auto));'
+            },
             keyframes: {
                 'bg-stars' : {
                     '0%' : {transform: 'scale3d(1, 1, 1)'},

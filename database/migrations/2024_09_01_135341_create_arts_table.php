@@ -21,7 +21,7 @@ return new class extends Migration
             $table->boolean("is_banner");
             $table->string("path_card_light");
             $table->string("path_card_dark")->nullable();
-            $table->boolean("suggestive");
+            $table->boolean("suggestive")->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

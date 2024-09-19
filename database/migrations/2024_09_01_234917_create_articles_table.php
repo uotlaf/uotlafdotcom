@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("author");
             $table->string("path_banner_light")->nullable();
             $table->string("path_banner_dark")->nullable();
-            $table->string("identifier")->unique();
+            $table->string("identifier");
             $table->string("language");
             $table->string("assets_folder")->nullable();
             $table->boolean("hide_from_posts")->default(false);
