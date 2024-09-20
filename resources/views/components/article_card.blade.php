@@ -1,4 +1,4 @@
-<a href="{{route('article', ['language' => App::currentLocale(), 'identifier' => $art->identifier])}}"
+<a href="{{route('article', ['language' => App::currentLocale(), 'identifier' => $article->identifier])}}"
    class="group relative rounded-lg overflow-hidden aspect-[4/3] items-end flex bg-black border-2 border-blue-900">
     @include('components/image',
     ['class' => "absolute top-0 left-0 w-full h-full object-cover",

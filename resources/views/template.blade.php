@@ -15,43 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="darkreader-lock">
     <meta name="language" content="{{App::currentLocale()}}"/>
-    @hasSection('article')
-        @if($article->tagNames())
-        <meta name="keywords" content="{{implode(',', $article->tagNames())}}"/>
+    <title>
+        @hasSection("window_title")    @yield("window_title")
+        @else                          @yield("title")
         @endif
-        <meta name="author" content="{{$article->author}}"/>
-        <meta property="og:description" content="{{ $article->subtitle }}" />
-    @endif
-    @hasSection('is_art')
-        <meta name="author" content="{{implode(',', $art->artists()->pluck("name")->toArray())}}"/>
-        <meta property="og:description" content="{{ $art->description }}" />
-    @endif
-    @hasSection("window_title")
-        <title>@yield("window_title")</title>
-    @else
-        <title>@yield("title")</title>
-    @endif
-{{--    Discord tags    --}}
-    <meta property="og:title" content="@yield("title")" />
-    @hasSection('article')
-        <meta property="og:type" content="article" />
-        @if($article->banner)
-            <meta property="og:image" content="{{$article->banner}}.png" />
-        @else
-            <meta property="og:image" content="{{Art::randomBanner()}}.png" />
-            @endif
-    @else
-        @hasSection('is_art')
-            <meta property="og:image" content="{{$art->photo}}.png" />
-        @endif
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="{{Art::randomBanner()}}"
-    @endif
-    <meta property="og:url" content="{{request()->url()}}" />
-    <meta name="theme-color" content="#000000">
-
-    <!-- Include this to make the og:image larger -->
-    <meta name="twitter:card" content="summary_large_image">
+    </title>
+    @include('components.meta')
     @vite('resources/css/app.css')
 </head>
 <body class="lg:px-20 xl:px-40 relative grid grid-cols-6 text-white bg-black gap-4">

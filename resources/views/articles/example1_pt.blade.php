@@ -12,7 +12,7 @@ hide_from_posts:0
 updated_at:none
 tags:example
 ---}}
-@extends('template')
+@extends('article')
 @section('title', "Teste do site")
 @section('subtitle', "Esse é um artigo exemplo")
 @section('article')

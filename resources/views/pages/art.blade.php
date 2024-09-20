@@ -1,10 +1,15 @@
 @php use App\Helpers\SummerHelper;use App\Models\Theme; @endphp
 @extends('template')
 @section('title', __("art.$art->identifier.title"))
-@section('is_art', true)
+@section('description')
+    {{__("art.$art->identifier.description") }}
+@endsection
+@section('og:image')
+    {{$art->photo}}.png
+@endsection
 @section('article_background')
     @include('components/image',
-        ['class' => "h-full w-full object-cover grayscale",
+        ['class' => "h-full w-full object-cover",
         'source' => $art->photo,
         'alt' => $art->name,
         'width_disc' => 1])

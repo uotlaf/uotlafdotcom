@@ -3,6 +3,12 @@
 @endphp
 @extends('template')
 @section('title', __('articles.with_tag').__('articletags.'.$tag->name))
+@section('description')
+    {{ __('default.recent_posts_description') }}
+@endsection
+@section('og:image')
+    {{\App\Models\Theme::get('card_posts')}}.png
+@endsection
 @section('content')
 
     <div class="grid grid-cols-2 gap-4 w-full">

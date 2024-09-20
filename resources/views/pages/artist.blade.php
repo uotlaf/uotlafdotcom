@@ -3,9 +3,15 @@
 @endphp
 @extends('template')
 @section('title', $artist->name)
+@section('description')
+    {{ __('default.recent_arts_description') }}
+@endsection
+@section('og:image')
+    {{\App\Models\Theme::get('card_arts')}}.png
+@endsection
 @section('article_background')
     @include('components.image', [
-        'class' => "h-full w-full object-cover grayscale",
+        'class' => "h-full w-full object-cover",
         'source' => $artist->banner,
         'alt' => $artist->name,
         'width_disc' => 0.5

@@ -3,9 +3,15 @@
 @endphp
 @extends('template')
 @section('title', $persona->name)
+@section('description')
+    {{ __('default.info_about', ["name" => $persona->name]) }}
+@endsection
+@section('og:image')
+    {{$persona->banner}}.png
+@endsection
 @section('article_background')
     @include('components.image', [
-            'class' => "h-full w-full object-cover grayscale",
+            'class' => "h-full w-full object-cover",
             'source' => $persona->banner,
             'alt' => $persona->name,
             'width_disc' => 0.5
@@ -31,8 +37,7 @@
             <span class="font-bold">{{ __('persona.species') }}:</span> {{ __('species.'.$persona->species) }}
         </p>
         <p>
-                    <span
-                        class="font-bold">{{ __('persona.age') }}:</span> {{ $persona->age }} {{ __('persona.years') }}
+            <span class="font-bold">{{ __('persona.age') }}:</span> {{ $persona->age }} {{ __('persona.years') }}
         </p>
         <p>
             <span class="font-bold">{{ __('persona.height') }}:</span> {{ $persona->height }}

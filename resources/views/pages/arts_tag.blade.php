@@ -3,6 +3,12 @@
 @endphp
 @extends('template')
 @section('title', __('art.with_tag').__("arttags.$tag->name"))
+@section('description')
+    {{ __('default.recent_arts_description') }}
+@endsection
+@section('og:image')
+    {{\App\Models\Theme::get('card_arts')}}.png
+@endsection
 @section('content')
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">

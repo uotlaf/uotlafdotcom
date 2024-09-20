@@ -9,9 +9,15 @@
 @extends('template')
 @section('title', __('default.arts'))
 @section('subtitle', __('default.latest_arts'))
+@section('description')
+    {{ __('default.recent_arts_description') }}
+@endsection
+@section('og:image')
+    {{\App\Models\Theme::get('card_arts')}}.png
+@endsection
 @section('article_background')
     @include('components/image',
-        ['class' => "h-full w-full object-cover grayscale",
+        ['class' => "h-full w-full object-cover",
         'source' => \App\Models\Theme::get('card_arts'),
         'alt' => 'Arts',
         'width_disc' => 1])

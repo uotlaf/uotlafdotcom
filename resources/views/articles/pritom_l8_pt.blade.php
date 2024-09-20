@@ -12,7 +12,7 @@ hide_from_posts:True
 updated_at:none
 tags:tablet
 ---}}
-@extends('template')
+@extends('article')
 @section('title', "Dumpando o firmware do pritom L8")
 @section('subtitle', "E instalando uma GSI")
 @section('article_mode', true)

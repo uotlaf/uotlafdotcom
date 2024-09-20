@@ -11,9 +11,15 @@
 @endphp
 @extends('template')
 @section('title', __('default.posts'))
+@section('description')
+    {{ __('default.recent_posts_description') }}
+@endsection
+@section('og:image')
+    {{\App\Models\Theme::get('card_posts')}}.png
+@endsection
 @section('article_background')
     @include('components/image',
-        ['class' => "h-full w-full object-cover grayscale",
+        ['class' => "h-full w-full object-cover",
         'source' => \App\Models\Theme::get('card_posts'),
         'alt' => 'Posts',
         'width_disc' => 1])

@@ -9,12 +9,18 @@ created_at:2024-07-01
 updated_at:none
 ---}}
 @php use App\Models\Persona; @endphp
-@extends('template')
+@extends('article')
 @section('title', __('default.about'))
 @section('hide_timestamp', true)
+@section('description')
+    The page where I talk about myself
+@endsection
+@section('og:image')
+    {{ \App\Models\Theme::get('card_about') }}.png
+@endsection
 @section('article_background')
     @include('components/image',
-        ['class' => "h-full w-full object-cover grayscale",
+        ['class' => "h-full w-full object-cover",
         'source' => \App\Models\Theme::get('card_about'),
         'alt' => 'About',
         'width_disc' => 1])

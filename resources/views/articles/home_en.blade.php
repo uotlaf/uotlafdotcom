@@ -8,13 +8,19 @@ hide_from_posts:True
 created_at:2024-07-01
 updated_at:none
 ---}}
-@extends('template')
+@extends('article')
 @section('title', __('default.title_home'))
 @section('window_title', __('default.site_name'))
 @section('hide_timestamp', true)
+@section('description')
+    This is my personal space, a place i decided to create so i dont lose everything i do.
+@endsection
+@section('og:image')
+    {{\App\Models\Art::randomBanner()}}.png
+@endsection
 @section('article_background')
     @include('components/image',
-        ['class' => "h-full w-full object-cover grayscale",
+        ['class' => "h-full w-full object-cover",
         'source' => \App\Models\Theme::get('companion_center'),
         'alt' => 'Home icon',
         'width_disc' => 1])
