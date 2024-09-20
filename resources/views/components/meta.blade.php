@@ -18,9 +18,7 @@
 @hasSection('og:image')
     <meta property="og:image" content="@yield('og:image')" />
 @endif
-@hasSection('og:image_large')
-    <meta name="twitter:card" content="summary_large_image">
-@endif
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="{{request()->url()}}" />
 <meta property="og:locale" content="{{app()->currentLocale()}}" />
 <meta property="og:locale:alternate" content="{{$other_locale}}" />
