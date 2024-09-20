@@ -17,7 +17,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
         }
         return Cache::rememberForever("view.$language.home", function () use ($language) {
             App::setLocale($language);
-            return view("articles/home_$language", ['article' => Article::where([['identifier', "home"], ['language', $language]])->firstOrFail()])->render();
+            return view("articles/home_$language", ['article' => Article::where([['identifier', "home"], ['language', $language]])->first()])->render();
         });
     })->name('home');
     Route::group(['prefix' => "/articles"], function() use ($language) {

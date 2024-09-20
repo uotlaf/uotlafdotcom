@@ -25,7 +25,9 @@ return [
     'other_versions' => 'Outras versões',
     'webring' => 'Webring',
     'recent_posts' => 'Posts recentes',
+    'recent_posts_description' => 'Últimos posts do espaço escondido do uotlaf',
     'recent_arts' => 'Artes recentes',
+    'recent_arts_description' => 'Últimas artes do espaço escondido do uotlaf',
     'contacts' => 'Contatos',
     'footer_text' => 'uotlaf\'s hidden palace - Feito em 2024',
     'phrase' => 'You don’t stop - You proceed - Cause this is what you need',
@@ -43,5 +45,6 @@ return [
     'per_tag' => 'Tags',
     'per_persona' => 'Fursona',
     'latest_arts' => 'Últimas artes',
-    'change_locale' => 'Change locale to english'
+    'change_locale' => 'Change locale to english',
+    'info_about' => 'Informações sobre :name'
 ];

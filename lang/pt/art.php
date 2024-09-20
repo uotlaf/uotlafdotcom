@@ -32,9 +32,9 @@ return [
     ],
     'ears01' => [
         'title' => 'Um problema bem barulhento',
-        'description' => "<p class='indent-8'>Uotlaf tem um problema bem grande com sons altos.</p>
-                <p class='indent-8'>Acontece que recentemente ele teve que participar de um evento muito barulhento que deixou ele extremamente irritado e com muita dor de cabeça(o que nunca tinha acontecido a este nível). Logo depois alguém resolveu levar uma caixa de som pro restaurante universitário extremamente lotado, o que terminou fazendo uotlaf passar mal e, logo depois, \"\"\"desaprender a falar\"\"\".</p>
-                <p class='indent-8'>Esse problema realmente aconteceu comigo, e agora eu tô tratando pra descobrir o que é. Eu precisava explicar as coisas nas consultas, então pedi pro fiveflare me ajudar e fazer essa arte(que ficou incrível). Agora é só descobrir o que tá acontecendo.</p>
+        'description' => "Uotlaf tem um problema bem grande com sons altos. <br>
+                Acontece que recentemente ele teve que participar de um evento muito barulhento que deixou ele extremamente irritado e com muita dor de cabeça(o que nunca tinha acontecido a este nível). Logo depois alguém resolveu levar uma caixa de som pro restaurante universitário extremamente lotado, o que terminou fazendo uotlaf passar mal e, logo depois, \"\"\"desaprender a falar\"\"\". <br>
+                Esse problema realmente aconteceu comigo, e agora eu tô tratando pra descobrir o que é. Eu precisava explicar as coisas nas consultas, então pedi pro fiveflare me ajudar e fazer essa arte(que ficou incrível). Agora é só descobrir o que tá acontecendo.
             "
     ],
 
