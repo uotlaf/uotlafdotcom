@@ -83,7 +83,8 @@
     }
 
     code > span > span, code > span, .code_numbers > li {
-        @apply text-xs
+        @apply text-xs;
+        text-wrap: auto;
     }
 
     code {
