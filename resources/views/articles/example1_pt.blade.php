@@ -56,8 +56,8 @@ tags:example
 
     <p>Imagens normais também podem ser carregadas:</p>
 
-    <div class="flex flex-row gap-2">
-        <img alt="android 4.0 homescreen" class="w-1/4 object-cover" src="{{ $article->getAsset("android.webp") }}">
+    <div class="flex flex-col lg:flex-row gap-2">
+        <img alt="android 4.0 homescreen" class="lg:w-1/4 object-contain" src="{{ $article->getAsset("android.webp") }}">
         <p>Would you look at all that stuff<br>
             They've got allen wrenches, gerbil feeders, toilet seats, electric heaters<br>
             Trash compactors, juice extractor, shower rods and water meters<br>
