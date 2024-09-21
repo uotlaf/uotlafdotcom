@@ -6,7 +6,7 @@
     'alt' => $article->title,
     'width_disc' => 1.2])
     <span
-        class="flex w-full h-20 lg:h-10 group-hover:h-20 flex-col drop-shadow-2xl bg-zinc-900/70 backdrop-blur-sm px-2 py-2 transition-all">
+        class="flex w-full h-20 lg:h-10 group-hover:h-20 flex-col drop-shadow-2xl bg-zinc-900/70 px-2 py-2 transition-all">
         <span class="text-xl text-ellipsis truncate">
             {{ $article->title }}
         </span>

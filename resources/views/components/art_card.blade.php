@@ -15,7 +15,7 @@
         'width_disc' => 1.2])
     @endif
     <span
-        class="flex w-full h-16 lg:h-10 group-hover:h-16 flex-col drop-shadow-2xl bg-zinc-900/70 backdrop-blur-sm px-2 py-2 transition-all">
+        class="flex w-full h-16 lg:h-10 group-hover:h-16 flex-col drop-shadow-2xl bg-zinc-900/70 px-2 py-2 transition-all">
         <span class="text-xl text-ellipsis truncate">
             {{ __("art.$art->identifier.title") }}
         </span>
