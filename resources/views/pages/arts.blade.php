@@ -49,8 +49,12 @@
     <ul class="flex space-x-2 justify-center">
         @foreach (Artist::all() as $artist)
             <li>
-                <a class="text-blue-600 dark:text-blue-500 hover:underline" href={{route('artist', ['language' => App::currentLocale(), 'identifier' => $artist->identifier])}}>
-                    {{  $artist->name }}
+                <a class="text-blue-600 dark:text-blue-500 w-32 hover:underline" href={{route('artist', ['language' => App::currentLocale(), 'identifier' => $artist->identifier])}}>
+                    @include('components/image',
+                        ['class' => "w-32 rounded-full border-2 object-cover",
+                        'source' => $artist->photo,
+                        'alt' => $artist->name])
+                    {{ $artist->name }}
                 </a>
             </li>
         @endforeach
@@ -61,7 +65,11 @@
         @foreach (Persona::all() as $persona)
             <li>
                 <a class="text-blue-600 dark:text-blue-500 hover:underline" href={{route('persona', ['language' => App::currentLocale(), 'identifier' => $persona->identifier])}}>
-                    {{  $persona->name }}
+                    @include('components/image',
+                         ['class' => "w-28 rounded-full border-2 object-cover",
+                         'source' => $persona->photo,
+                         'alt' => $persona->name])
+                    {{ $persona->name }}
                 </a>
             </li>
         @endforeach
