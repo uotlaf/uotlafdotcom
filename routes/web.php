@@ -123,3 +123,6 @@ Route::group(['prefix' => '{language}'], function ($language) {
 Route::get('/', function () {
     return redirect('/'.App::currentLocale());
 });
+
+// In routes/web.php
+Route::feeds();

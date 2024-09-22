@@ -14,7 +14,7 @@
         'alt' => $art->name,
         'effects' => ['grayscale']])
 @endsection
-@section('content')
+@section('article')
     <div class="flex justify-center overflow-hidden">
         <div class="relative group">
             <img id="main_photo" class="h-96 object-contain" src="{{$art->photo}}.png" alt="{{$art->name}}">

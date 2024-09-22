@@ -22,6 +22,7 @@
     </title>
     @include('components.meta')
     @vite('resources/css/app.css')
+    @include('feed::links')
 </head>
 <body class="lg:px-20 xl:px-40 relative grid grid-cols-6 text-white bg-black gap-4">
 @include('backgrounds.stars')
@@ -69,7 +70,7 @@
         </nav>
     @endforeach
 </section>
-<section id="center"
+<main id="center"
          class="col-span-6 lg:col-span-4 border-2 border-blue-400 rounded-xl grid overflow-hidden bg-black flex-1 py-5 px-5 relative">
     {{-- Article Background --}}
     @hasSection('article_background')
@@ -104,7 +105,7 @@
         @else
             </div>
     @endif
-</section>
+</main>
 <section id="right_nav"
          class="bg-blue select-none col-span-6 lg:col-span-1 hidden lg:block w-0 lg:w-full transition-all">
     {{--     Cube      --}}

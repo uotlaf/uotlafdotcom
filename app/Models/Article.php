@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Article extends Model
+class Article extends Model implements Feedable
 {
     use SoftDeletes;
 
@@ -59,5 +62,19 @@ class Article extends Model
         return $this->tags()->pluck("name")->toArray();
     }
 
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create()
+            ->id($this->id)
+            ->title($this->title)
+            ->summary($this->subtitle)
+            ->updated($this->updated_at)
+            ->link(route('article', ['language' => App::currentLocale(), 'identifier' => $this->identifier]))
+            ->authorName($this->author);
+    }
 
+    public static function getFeedItems($language)
+    {
+        return Article::where([['language', $language], ['hide_from_posts', false]])->orderBy('updated_at', 'desc')->get();
+    }
 }

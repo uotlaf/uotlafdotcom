@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
-class Art extends Model
+class Art extends Model implements Feedable
 {
     use SoftDeletes;
 
@@ -82,11 +84,6 @@ class Art extends Model
         return self::where('suggestive', false)->orderBy("created_at", "desc")->take($count)->get();
     }
 
-    public static function getFeedItems(): Collection
-    {
-        return self::all();
-    }
-
     // Relationships
     public function personas(): BelongsToMany
     {
@@ -112,13 +109,19 @@ class Art extends Model
             ->title($this->name)
             ->summary($this->description)
             ->updated($this->updated_at)
-            ->link(Config::get('site_url') . "/arts/" . $this->identifier)
+            ->link(route('art', ['language' => App::currentLocale(), 'identifier' => $this->identifier]))
+            ->image("$this->photo.png")
             ->authorName(implode(',', $this->artists()->pluck("name")->toArray()));
     }
 
     public function artists(): BelongsToMany
     {
         return $this->belongsToMany(Artist::class);
+    }
+
+    public static function getFeedItems(): Collection
+    {
+        return self::all();
     }
 
 }
