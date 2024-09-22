@@ -14,8 +14,7 @@
         'class' => "h-full w-full object-cover",
         'source' => $artist->banner,
         'alt' => $artist->name,
-        'width_disc' => 0.5
-    ])
+        'effects' => ['grayscale']])
 @endsection
 @section('content')
     <div class="z-10 relative">

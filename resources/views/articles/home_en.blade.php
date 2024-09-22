@@ -23,7 +23,7 @@ updated_at:none
         ['class' => "h-full w-full object-cover",
         'source' => \App\Models\Theme::get('companion_center'),
         'alt' => 'Home icon',
-        'width_disc' => 1])
+        'effects' => ['grayscale']])
 @endsection
 @section('article')
     <p>

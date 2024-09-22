@@ -12,7 +12,7 @@
         ['class' => "h-full w-full object-cover",
         'source' => $art->photo,
         'alt' => $art->name,
-        'width_disc' => 1])
+        'effects' => ['grayscale']])
 @endsection
 @section('content')
     <div class="flex justify-center overflow-hidden">
@@ -105,7 +105,6 @@
                     </li>
                 @endforeach
             </ul>
-
         </div>
     </div>
 

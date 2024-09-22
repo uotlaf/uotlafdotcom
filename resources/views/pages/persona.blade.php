@@ -14,8 +14,7 @@
             'class' => "h-full w-full object-cover",
             'source' => $persona->banner,
             'alt' => $persona->name,
-            'width_disc' => 0.5
-        ])
+            'effects' => ['grayscale']])
 @endsection
 @section('content')
     {{--   Profile Picture    --}}

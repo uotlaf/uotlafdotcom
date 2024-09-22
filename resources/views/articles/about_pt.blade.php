@@ -23,7 +23,7 @@ updated_at:none
         ['class' => "h-full w-full object-cover",
         'source' => \App\Models\Theme::get('card_about'),
         'alt' => 'About',
-        'width_disc' => 1])
+        'effects' => ['grayscale']])
 @endsection
 @section('article')
     <div class="flex justify-center">
