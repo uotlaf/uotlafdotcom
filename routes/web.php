@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '{language}'], function ($language) {
     Route::get('/', function ($language) {
         if (!in_array($language, ['pt', 'en'])) {
-            $language = 'en';
+            abort(404);
         }
         return Cache::rememberForever("view.$language.home", function () use ($language) {
             App::setLocale($language);
@@ -23,7 +23,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
     Route::group(['prefix' => "/articles"], function() use ($language) {
         Route::get('/', function($language) {
             if (!in_array($language, ['pt', 'en'])) {
-                $language = 'en';
+                abort(404);
             }
             $page = request()->input('page', 1);
             return Cache::rememberForever("view.articles_$language.$page", function () use ($language) {
@@ -33,7 +33,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
         })->name('all_articles');
         Route::get('/tag/{identifier}', function ($language, $identifier) {
             if (!in_array($language, ['pt', 'en'])) {
-                $language = 'en';
+                abort(404);
             }
             $tag = ArticleTag::where('name', $identifier)->firstOrFail();
             return Cache::rememberForever("view.arts_$language.$tag.$identifier", function () use ($language, $identifier, $tag) {
@@ -43,7 +43,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
         })->name('articles_by_tag');
         Route::get('{identifier}', function ($language, $identifier) {
             if (!in_array($language, ['pt', 'en'])) {
-                $language = 'en';
+                abort(404);
             }
             $article = Article::where([['identifier', $identifier], ['language', $language]])->firstOrFail();
             return Cache::rememberForever("view.articles_$language.$identifier", function () use ($language, $article) {
@@ -55,7 +55,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
     Route::group(['prefix' => "/arts"], function () use ($language) {
         Route::get('/', function ($language) {
             if (!in_array($language, ['pt', 'en'])) {
-                $language = 'en';
+                abort(404);
             }
             $page = request()->input('page', 1);
             return Cache::rememberForever("view.$language.arts.$page", function () use ($language) {
@@ -65,7 +65,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
         })->name('all_arts');
         Route::get('/tag/{identifier}', function ($language, $identifier) {
             if (!in_array($language, ['pt', 'en'])) {
-                $language = 'en';
+                abort(404);
             }
             $page = request()->input('page', 1);
             $tag = ArtTag::where('name', $identifier)->firstOrFail();
@@ -76,7 +76,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
         })->name('arts_by_tag');
         Route::get('{identifier}', function ($language, $identifier) {
             if (!in_array($language, ['pt', 'en'])) {
-                $language = 'en';
+                abort(404);
             }
 
             $art = Art::where('identifier', $identifier)->firstOrFail();
@@ -89,7 +89,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
     });
     Route::get('/artist/{identifier}', function (String $language, String $identifier) {
         if (!in_array($language, ['pt', 'en'])) {
-            $language = 'en';
+            abort(404);
         }
         $artist = Artist::where('identifier', $identifier)->firstOrFail();
         $page = request()->input('page', 1);
@@ -100,7 +100,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
     })->name('artist');
     Route::get('/personas/{identifier}', function (String $language, String $identifier) {
         if (!in_array($language, ['pt', 'en'])) {
-            $language = 'en';
+            abort(404);
         }
         $persona = Persona::where('identifier', $identifier)->firstOrFail();
         $page = request()->input('page', 1);
@@ -111,7 +111,7 @@ Route::group(['prefix' => '{language}'], function ($language) {
     })->name('persona');
     Route::get('/about', function ($language) {
         if (!in_array($language, ['pt', 'en'])) {
-            $language = 'en';
+            abort(404);
         }
         return Cache::rememberForever("view.$language.about", function () use ($language) {
             App::setLocale($language);
@@ -124,5 +124,4 @@ Route::get('/', function () {
     return redirect('/'.App::currentLocale());
 });
 
-// In routes/web.php
 Route::feeds();
