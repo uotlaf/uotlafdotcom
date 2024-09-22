@@ -47,7 +47,7 @@
 //                ],
             __('default.nerd_things') => [
                 ['text' => __('default.gpg_key'), 'link' => '/uotlaf.gpg', 'background' => Theme::get('card_gpg')],
-                ['text' => __('default.rss_feed'), 'link' => '/articles/rss_feed_'.App::currentLocale(), 'background' => Theme::get('card_rss')],
+                ['text' => __('default.rss_feed'), 'link' => route('article', ['language' => App::currentLocale(), 'identifier' => 'rss']), 'background' => Theme::get('card_rss')],
                 ],
 //                __('default.other_versions') => [
 //                    ['text' => __('versions.3ds'), 'link' => '/', 'background' => Theme::get('card_3ds')]
