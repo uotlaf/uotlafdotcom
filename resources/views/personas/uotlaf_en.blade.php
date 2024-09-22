@@ -15,8 +15,8 @@
     </p>
     <p> Like every arctic
         fox (or some in <a class="link" href="https://en.wikifur.com/wiki/Fandom">furry fandom</a>), It changes
-        the color of its coat and markings depending on the time of year: At first, its coat is almost bluish-white and
-        has markings on its snout, ear tips, toes and the ends of its tail. From the middle of the year, its coat
+        the color of its pelt and markings depending on the time of year: At first, its pelt is almost bluish-white and
+        has markings on its snout, ear tips, toes and the ends of its tail. From the middle of the year, its pelt
         changes to a brownish-brown color and it gains a marking that runs from its mouth to its belly.
     </p>
     <p>As for
