@@ -17,7 +17,7 @@
 @section('content')
     <div class="flex justify-center overflow-hidden">
         <div class="relative group">
-            <img id="main_photo" class="h-96 object-contain" src="{{$art->photo}}.png" alt={{$art->name}}>
+            <img id="main_photo" class="h-96 object-contain" src="{{$art->photo}}.png" alt="{{$art->name}}">
             @if ($art->path_dark)
                 <a id="version_switch" class="absolute bottom-0 left-0 bg-zinc-900/70 backdrop-blur-sm transition-all group max-w-2 group-hover:max-w-16" hidden
                    onclick="change_photo()">
@@ -95,6 +95,7 @@
 
             <p>
                 {{ __('art.tags') }}:
+            </p>
             <ul class="list-disc">
                 @foreach($art->tags as $tag)
                     <li class="ml-4">
@@ -104,7 +105,7 @@
                     </li>
                 @endforeach
             </ul>
-            </p>
+
         </div>
     </div>
 
