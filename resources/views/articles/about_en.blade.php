@@ -71,6 +71,12 @@ updated_at:none
         links available on the right side of this page.
     </p>
 
+    <h2 class="text-center">Other infos</h2>
+
+    <p>
+        Want to know more about me? See the <a class="link" href="{{route('persona', ['language' => App::currentLocale(), 'identifier' => 'uotlaf'])}}">uotlaf's page</a>
+    </p>
+
     <p>
         Want to add me to the webring? The badge is available <a class="link" href={{env('CDN_PATH')."/asset/badge/emerald/emerald.gif"}}>here</a>. You can add a
         tag like this:

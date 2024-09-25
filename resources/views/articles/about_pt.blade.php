@@ -64,18 +64,24 @@ updated_at:none
         que a galera faz no neocities(Tem uns no webring que tá na esquerda)
     </p>
     <p>
-        Ah, esse site também foi inspirado em uma galera que eu costumo acompanhar, como <a
-            href="https://xeiaso.net">xeiaso.net</a>,
-        <a href="https://kernel32.xyz">kernel32.xyz</a> e <a
-            href="https://worthdoingbadly.com">worthdoingbadly.com</a>
+        Ah, esse site também foi inspirado em uma galera que eu costumo acompanhar, como
+        <a class="link" href="https://xeiaso.net">xeiaso.net</a>,
+        <a class="link" href="https://kernel32.xyz">kernel32.xyz</a> e
+        <a class="link" href="https://worthdoingbadly.com">worthdoingbadly.com</a>
     </p>
 
     <h2 class="text-center">Informações importantes sobre o uso este site</h2>
 
     <p>
-        Este site está licenciado sob a licença BSD 3-Clause NON-AI. Uma cópia da licença pode ser encontrada <a
+        Este site está licenciado sob a licença BSD 3-Clause NON-AI. Uma cópia da licença pode ser encontrada <a class="link"
             href="/LICENSE.txt">aqui</a>. Caso queira uma exceção a esta licença, me contacte pelos links disponíveis na
         direita desta página.
+    </p>
+
+    <h2 class="text-center">Outras informações</h2>
+
+    <p>
+        Quer saber mais sobre mim? Veja a <a class="link" href="{{route('persona', ['language' => App::currentLocale(), 'identifier' => 'uotlaf'])}}">página do uotlaf</a>
     </p>
 
     <p>
