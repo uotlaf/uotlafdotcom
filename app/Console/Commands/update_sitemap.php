@@ -3,15 +3,16 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Spatie\Sitemap\SitemapGenerator;
 
-class update_all extends Command
+class update_sitemap extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'site:update_all';
+    protected $signature = 'site:update_sitemap';
 
     /**
      * The console command description.
@@ -25,10 +26,6 @@ class update_all extends Command
      */
     public function handle()
     {
-        $this->call('site:update_artists');
-        $this->call('site:update_personas');
-        $this->call('site:update_arts');
-        $this->call('site:update_articles');
-        $this->call('site:update_sitemap');
+        SitemapGenerator::create(env('APP_URL'))->writeToFile(public_path('sitemap.xml'));
     }
 }

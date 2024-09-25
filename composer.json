@@ -9,6 +9,7 @@
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
         "spatie/laravel-feed": "^4.4",
+        "spatie/laravel-sitemap": "^7.2",
         "spatie/shiki-php": "^2.0"
     },
     "require-dev": {
